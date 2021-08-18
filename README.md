@@ -29,7 +29,7 @@ Here is an overview of the methods currently available:
 
 ```getDetailedStopInfoAsync(stopId, transportType, options = { includeDisruptions: true })``` - Get information on a stop's ammenties and accessability facilities, and optionally any drisruptions. _You should generally take any ammentity/accessability info for non-premium stations with a grain of salt. For example, many train stops list having a toilet, which may be technically true, but is either permamently locked or only accessable during peak hours._
 
-```getDeparturesForAStopAsync(stopId, transportTypeId, options = { startDateUTC: '2021-08-17T14:48:52.356Z', directionId: 15, maxResults: 10, includeDisruptions: true, includeDirections: true, preSortDepartures: true })``` - Gets departures for a stop and optionally overviews for lines (lines) and disruptions. By default includes all lines in all directions. Note that maxResults is the number of departures *per line*. Includes live arrival times for services that support it.
+```getDeparturesForStopAsync(stopId, transportTypeId, options = { startDateUTC: '2021-08-17T14:48:52.356Z', directionId: 15, maxResults: 10, includeDisruptions: true, includeDirections: true, preSortDepartures: true })``` - Gets departures for a stop and optionally overviews for lines (lines) and disruptions. By default includes all lines in all directions. Note that maxResults is the number of departures *per line*. Includes live arrival times for services that support it.
 
 ```getDeparturesForARunAsync(runRef,transportType)``` - Gets departures for all stops on a particular service, ordered by first to last. Includes live arrival times for services that support it.
 

@@ -154,7 +154,7 @@ declare module 'ptv-api-helper' {
         calculateFareAsync: (zoneStart: number, zoneEnd: number) => Promise<TicketPrices>;
         getDetailedStopInfoAsync: (stopId: number, transportType: number, options?: DetailedStopOptions) => Promise<DetailedStop>;
         getAllTransportTypesAsync: () => Promise<TransportType[]>;
-        getDeparturesForAStopAsync: (stopId: number, transportTypeId: number, options: StopDepartureOptions) => Promise<Departures>;
+        getDeparturesForStopAsync: (stopId: number, transportTypeId: number, options: StopDepartureOptions) => Promise<Departures>;
         getDeparturesForARunAsync: (runRef: string | number, transportType: number) => Promise<RunDepartures>;
         getDirectionsForLineAsync: (lineId: number) => Promise<Direction[]>;
         getStopsOnALineAsync: (lineId: number, transportType: number, directionId: number) => Promise<LineStop[]>;
