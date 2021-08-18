@@ -225,7 +225,7 @@ function ptvClient(devId, apiKey) {
             id: s.stop_id,
             suburb: s.stop_suburb,
             transportType: s.route_type,
-            stopLat: s._stop_latitude,
+            stopLat: s.stop_latitude,
             stopLong: s.stop_longitude,
             routes: parseRouteResults(s.routes)
         }));
