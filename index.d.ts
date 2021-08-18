@@ -5,6 +5,7 @@ declare module 'ptv-api-helper' {
 
     interface StopDepartureOptions {
         includeDisruptions?: boolean;
+        includeDirections?: boolean;
         startDateUTC?: string;
         directionId?: number;
         maxResults?: number;
