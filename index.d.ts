@@ -43,6 +43,7 @@ declare module 'ptv-api-helper' {
         stopLong: number,
         stopLat: number,
         zones: number[];
+        transportType: number;
         routes: StopSearchRouteResult[];
         hasTicketMachine: boolean;
         inFreeTramZone: boolean;

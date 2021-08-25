@@ -168,6 +168,7 @@ function ptvClient(devId, apiKey) {
             id: stop.stop_id,
             operatingHours: (stop.operating_hours !== "N") ? stop.operating_hours : "No Operating Hours",
             name: stop.stop_name,
+            transportType: stop.route_type,
             stopLong: stop.stop_location.gps.longitude,
             stopLat: stop.stop_location.gps.latitude,
             stationStaffing: stop.station_type,
