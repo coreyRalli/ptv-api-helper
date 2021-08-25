@@ -61,8 +61,12 @@ function ptvClient(devId, apiKey) {
         const stopResponse = await makeAPIRequestAsync(method);
         const stop = stopResponse.stop;
 
+        const parsedStop = parseDetailedStop(stop);
+        if (options.includeRoutes)
+            parsedStop.routes = parseRouteResults(stopResponse.stop.routes);
+
         return {
-            stop: parseDetailedStop(stop),
+            stop: parsedStop,
             routes: (options.includeRoutes) ? parseRouteResults(stopResponse.stop.routes) : null,
             disruptions: (options.includeDisruptions) ? Object.keys(stopResponse.disruptions).map(dis => parseDisruption(stopResponse.disruptions[dis])) : []
         }
