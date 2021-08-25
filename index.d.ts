@@ -1,6 +1,7 @@
 declare module 'ptv-api-helper' {
     interface DetailedStopOptions {
         includeDisruptions?: boolean;
+        includeRoutes?: boolean;
     }
 
     interface StopDepartureOptions {
@@ -98,15 +99,11 @@ declare module 'ptv-api-helper' {
     }
 
     interface Direction {
+        name: string;
         id: number;
-        title: string;
-        url: string;
         description: string;
-        status: string;
-        type: number;
-        startDate: string;
-        endDate: string;
-        updated: string;
+        lineId: number;
+        transportType: number;
     }
 
     interface RunStop {

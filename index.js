@@ -63,6 +63,7 @@ function ptvClient(devId, apiKey) {
 
         return {
             stop: parseDetailedStop(stop),
+            routes: (options.includeRoutes) ? parseRouteResults(stopResponse.stop.routes) : null,
             disruptions: (options.includeDisruptions) ? Object.keys(stopResponse.disruptions).map(dis => parseDisruption(stopResponse.disruptions[dis])) : []
         }
     }
