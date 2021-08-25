@@ -1,6 +1,6 @@
 {
   "name": "ptv-api-helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "description": "A NodeJS library for the Victorian Public Transport Timetable API",
   "homepage": "https://github.com/coreyRalli/ptv-api-helper",

@@ -217,8 +217,8 @@ function ptvClient(devId, apiKey) {
             lineId: run.route_id,
             id: run.run_id,
             runRef: run.run_ref,
-            liveDepatureTime: run.estimated_departure_utc,
-            timetabledDepatureTime: run.scheduled_departure_utc,
+            liveArrivalTimeUTC: run.estimated_departure_utc,
+            timetabledArrivalTimeUTC: run.scheduled_departure_utc,
             stopNumber: run.departure_sequence,
             directionId: run.direction_id
         })
