@@ -11,6 +11,7 @@ function ptvClient(devId, apiKey) {
         directions: '/v3/directions/route/',
         patterns: '/v3/pattern/run/',
         stopDisruptions: '/v3/disruptions/stop/',
+        routeDisruptions: '/v3/disruptions/route/',
         fares: '/v3/fare_estimate/min_zone/',
         search: '/v3/search/',
         stopsByLocation: '/v3/stops/location/',
@@ -158,6 +159,22 @@ function ptvClient(devId, apiKey) {
     async function getFutureDisruptionsForStopAsync(stopId, transportType) {
         const method = `${APIPaths.stopDisruptions}${stopId}?disruption_status=planned`;
 
+        const disruptionResponse = await makeAPIRequestAsync(method);
+
+        return parseDisruptions(disruptionResponse, transportType);
+    }
+
+    async function getCurrentDisruptionsForLineAsync(lineId, transportType) {
+        const method = `${APIPaths.routeDisruptions}${lineId}?disruption_status=current`;
+
+        const disruptionResponse = await makeAPIRequestAsync(method);
+
+        return parseDisruptions(disruptionResponse, transportType);
+    }
+
+    async function getFutureDisruptionsForLineAsync(lineId, transportType) {
+        const method = `${APIPaths.routeDisruptions}${lineId}?disruption_status=planned`;
+        
         const disruptionResponse = await makeAPIRequestAsync(method);
 
         return parseDisruptions(disruptionResponse, transportType);
@@ -339,7 +356,9 @@ function ptvClient(devId, apiKey) {
         searchForStopByLocationAsync,
         searchForStopBySuburbAsync,
         getFutureDisruptionsForStopAsync,
-        getCurrentDisruptionsForStopAsync
+        getCurrentDisruptionsForStopAsync,
+        getCurrentDisruptionsForLineAsync,
+        getFutureDisruptionsForLineAsync
     }
 }
 

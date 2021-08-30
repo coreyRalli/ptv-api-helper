@@ -161,6 +161,8 @@ declare module 'ptv-api-helper' {
         searchForStopBySuburbAsync: (suburb: string, transportFilters: number[]) => Promise<StopSearchResult[]>;
         getFutureDisruptionsForStopAsync: (stopId: number, transportType: number) => Promise<Disruptions>;
         getCurrentDisruptionsForStopAsync: (stopId: number, transportType: number) => Promise<Disruptions>;
+        getCurrentDisruptionsForLineAsync: (lineId: number, transportType: number) => Promise<Disruptions>;
+        getFutureDisruptionsForLineAsync: (lineId: number, transportType: number) => Promise<Disruptions>;
     }
 
     export = ptvClient;
