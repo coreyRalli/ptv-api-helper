@@ -130,6 +130,7 @@ declare module 'ptv-api-helper' {
         id: string;
         name: string;
         stopNumber: number;
+        transportType: number;
     }
 
     interface StopSearchResult {

@@ -112,7 +112,7 @@ function ptvClient(devId, apiKey) {
 
         const response = await makeAPIRequestAsync(method);
 
-        const stops = response.stops.map(s => ({ id: s.stop_id, name: s.stop_name, stopNumber: s.stop_sequence }));
+        const stops = response.stops.map(s => ({ id: s.stop_id, name: s.stop_name, stopNumber: s.stop_sequence, transportType: s.route_type }));
         stops.sort((a, b) => a.stopNumber - b.stopNumber);
 
         return stops;
